@@ -1,31 +1,45 @@
 // script.js
 
-// 预定义的笑话列表
+// 预定义的笑话和答案列表
 const jokes = [
-    "Why don't scientists trust atoms? Because they make up everything!",
-    "Why did the chicken join a band? Because it had the drumsticks!",
-    "I told my wife she was drawing her eyebrows too high. She looked surprised.",
-    "Why don't some couples go to the gym? Because some relationships don't work out.",
-    "I'm reading a book about anti-gravity. It's impossible to put down!"
+    { joke: "Why don't scientists trust atoms?", answer: "Because they make up everything!" },
+    { joke: "Why did the chicken join a band?", answer: "Because it had the drumsticks!" },
+    { joke: "What do you call fake spaghetti?", answer: "An impasta!" },
+    { joke: "Why was the math book sad?", answer: "Because it had too many problems." },
+    { joke: "How does a penguin build its house?", answer: "Igloos it together!" }
 ];
 
 // 获取DOM元素
 const jokeContainer = document.getElementById('joke');
-const newJokeBtn = document.getElementById('new-joke-btn');
+const answerContainer = document.getElementById('answer');
+const revealBtn = document.getElementById('reveal-btn');
+
+// 当前的笑话索引
+let currentJokeIndex = null;
 
 // 随机生成笑话的函数
 function generateRandomJoke() {
-    const randomIndex = Math.floor(Math.random() * jokes.length);
-    return jokes[randomIndex];
+    currentJokeIndex = Math.floor(Math.random() * jokes.length);
+    return jokes[currentJokeIndex];
 }
 
 // 更新笑话内容
 function updateJoke() {
-    jokeContainer.textContent = generateRandomJoke();
+    const currentJoke = generateRandomJoke();
+    jokeContainer.textContent = currentJoke.joke;
+    answerContainer.textContent = currentJoke.answer;
+    answerContainer.style.display = 'none'; // 隐藏答案
 }
 
-// 初始化时显示一个笑话
+// 显示答案
+function revealAnswer() {
+    if (currentJokeIndex !== null) {
+        answerContainer.style.display = 'block';
+    }
+}
+
+// 初始化时立即生成并显示一个随机笑话
 updateJoke();
 
-// 点击按钮生成新笑话
-newJokeBtn.addEventListener('click', updateJoke);
+// 点击“Reveal”按钮显示答案
+revealBtn.addEventListener('click', revealAnswer);
