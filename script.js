@@ -7,12 +7,6 @@ const jokes = [
     { joke: "What do you call fake spaghetti?", answer: "An impasta!" },
     { joke: "Why was the math book sad?", answer: "Because it had too many problems." },
     { joke: "How does a penguin build its house?", answer: "Igloos it together!" }
-    { joke: "What did the vet say to the cat?", answer: "How are you feline?" }
-    { joke: "What happens when M&M’s can’t agree on anything?", answer: "They reach an M-passe." },
-    { joke: "What do you call a fake noodle?", answer: "An impasta." },
-    { joke: "What do you call a belt made of watches?", answer: "A waist of time." },
-    { joke: "Where do math teachers go on vacation?", answer: "Times Square." },
-    { joke: "What does garlic do when it gets hot?", answer: "it takes its cloves off." }
 ];
 
 // 获取DOM元素
