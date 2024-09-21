@@ -20,7 +20,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px;
         }
         #joke {
             font-size: 1.5em;
@@ -612,7 +612,7 @@
     }
 
     // 页面加载完成后立即生成并显示一个随机笑话
-    window.onload = updateJoke;
+    document.addEventListener('DOMContentLoaded', updateJoke);
 
     // 点击“Reveal”按钮显示答案
     revealBtn.addEventListener('click', revealAnswer);
